@@ -1,0 +1,8 @@
+To:
+	Mr. Harry Hacker
+	1105 Torre Ave.
+	Cupertino, CA 95014
+	
+	Dear Mr. Hacker
+	You and the Hacker family may be the lucky winners of $10,000,000 in the C++
+	compiler clearinghouse sweepstakes! ...
