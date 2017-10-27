@@ -14,7 +14,7 @@
 
 using namespace std;
 
-void remove_duplicates(vector<int>& a)
+void remove_duplicates(vector<int> &a)
 {
 	int n = a.size();
 
@@ -37,7 +37,7 @@ void remove_duplicates(vector<int>& a)
 	}
 }
 
-void print(vector<int>& a)
+void print(vector<int> &a)
 {
 	for (unsigned int i = 0; i < a.size(); i++)
 	{
@@ -45,21 +45,24 @@ void print(vector<int>& a)
 	}
 }
 
-int main() {
+int main()
+{
 
-	vector<int> numbers{ 1, 4, 9, 16, 9, 7, 4, 9, 11 };
+	vector<int> numbers{1, 4, 9, 16, 9, 7, 4, 9, 11};
 
 	cout << "Before removing duplicates: ";
 	print(numbers);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	remove_duplicates(numbers);
 
 	cout << "After removing duplicates: ";
 	print(numbers);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	return 0;
 }

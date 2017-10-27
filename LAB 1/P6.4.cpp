@@ -16,7 +16,7 @@
 
 using namespace std;
 
-vector<int> append(vector<int>& a, vector<int>& b)
+vector<int> append(vector<int> &a, vector<int> &b)
 {
 	int sizeOfA = a.size();
 	int sizeOfB = b.size();
@@ -69,7 +69,7 @@ vector<int> append(vector<int>& a, vector<int>& b)
 	}
 }
 
-void print(vector<int>& a)
+void print(vector<int> &a)
 {
 	for (unsigned int i = 0; i < a.size(); i++)
 	{
@@ -77,8 +77,9 @@ void print(vector<int>& a)
 	}
 }
 
-int main() {
-	
+int main()
+{
+
 	vector<int> a;
 	a.push_back(1);
 	a.push_back(4);
@@ -97,19 +98,22 @@ int main() {
 	cout << "Vector a: ";
 	print(a);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	cout << "Vector b: ";
 	print(b);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	vector<int> result = append(a, b);
 
 	cout << "After appending: ";
 	print(result);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	return 0;
 }

@@ -11,9 +11,10 @@
 
 using namespace std;
 
-class Student {
+class Student
+{
 
-public:
+  public:
 	Student();
 
 	Student(string, int);
@@ -26,10 +27,10 @@ public:
 
 	int get_average_score();
 
-private:
+  private:
 	string name;
 	int score;
-    int numberOfQuizzes;
+	int numberOfQuizzes;
 };
 
 Student::Student()
@@ -66,7 +67,8 @@ int Student::get_average_score()
 	return get_total_score() / numberOfQuizzes;
 }
 
-int main() {
+int main()
+{
 
 	Student s1("George Suarez", 10);
 
@@ -79,7 +81,8 @@ int main() {
 	cout << "Total Quiz Score: " << s1.get_total_score() << endl;
 	cout << "Average Quiz Score: " << s1.get_average_score() << endl;
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	return 0;
 }

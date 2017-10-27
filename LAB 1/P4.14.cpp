@@ -38,8 +38,8 @@ void grind_coffee();
 void collect_coffee();
 // collect_coffee - collects coffee from coffee maker
 
-
-int main() {
+int main()
+{
 	cout << "**Coffee Making Instructions**" << endl;
 	cout << endl;
 	get_ingredients();
@@ -50,7 +50,8 @@ int main() {
 }
 
 // Function Definitions
-void get_ingredients() {
+void get_ingredients()
+{
 
 	string input;
 	cout << "Grab the cup that you going to use for your coffee." << endl;
@@ -60,18 +61,21 @@ void get_ingredients() {
 	cout << "Is the coffee maker clean? (y/n) ";
 	getline(cin, input);
 
-	if (input == "y") {
+	if (input == "y")
+	{
 
 		coffee_choice();
 	}
 
-	else {
+	else
+	{
 
 		clean_coffee_maker();
 	}
 }
 
-void clean_coffee_maker() {
+void clean_coffee_maker()
+{
 
 	cout << endl;
 	cout << "Grab a bottle of vinegar." << endl;
@@ -84,23 +88,24 @@ void clean_coffee_maker() {
 	string input;
 	getline(cin, input);
 
-	if (input == "y") {
+	if (input == "y")
+	{
 
 		cout << endl;
 		cout << "Toss out the vinegar from the coffee maker." << endl;
 		coffee_choice();
 	}
 
-	else {
+	else
+	{
 
 		cout << endl;
 		cout << "Make sure the coffee maker is plugged in." << endl;
 	}
-
-
 }
 
-void brew_coffee() {
+void brew_coffee()
+{
 
 	cout << "Add water to the coffee maker." << endl;
 	cout << "Put the coffee filter inside the coffee maker." << endl;
@@ -111,28 +116,31 @@ void brew_coffee() {
 	string input;
 	getline(cin, input);
 
-	if (input == "y") {
+	if (input == "y")
+	{
 
 		collect_coffee();
 	}
 
-	else {
+	else
+	{
 
 		cout << endl;
 		cout << "Grab your coffee cup and wait until it is done brewing." << endl;
 		cout << "Then collect your coffee from the coffee maker, and enjoy." << endl;
 	}
-
 }
 
-void grind_coffee() {
+void grind_coffee()
+{
 
 	cout << "Find the coffee grinder you are going to use." << endl;
 	cout << "Insert the coffee beans inside the coffee grinder." << endl;
 	cout << "Wait until the coffee grinder is done, and then collect your coffee ground." << endl;
 }
 
-void collect_coffee() {
+void collect_coffee()
+{
 
 	cout << endl;
 	cout << "Grab your coffee cup." << endl;
@@ -140,20 +148,23 @@ void collect_coffee() {
 	cout << "Enjoy your cup of coffee." << endl;
 }
 
-void coffee_choice() {
+void coffee_choice()
+{
 
 	string input;
 	cout << endl;
 	cout << "Do you already have coffee ground? (y/n) ";
 	getline(cin, input);
 
-	if (input == "y") {
+	if (input == "y")
+	{
 
 		cout << "Great, you are set." << endl;
 		cout << endl;
 	}
 
-	else {
+	else
+	{
 		cout << endl;
 		cout << "Grab some coffee beans that you are going to grind." << endl;
 		grind_coffee();

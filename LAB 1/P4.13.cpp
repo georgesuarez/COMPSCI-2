@@ -6,7 +6,7 @@
 	convert the first, call the conversion function again for the substring starting with
 	the second character, and add both values. If the first one has a smaller value than
 	the second, compute the difference and add to it the conversion of the tail. This
-	algorithm will convert “Pig Roman” numbers like “IC”. Extra credit if you can
+	algorithm will convert ï¿½Pig Romanï¿½ numbers like ï¿½ICï¿½. Extra credit if you can
 	modify it to process only genuine Roman numbers.
 */
 
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-int convert(string& romanNumber)
+int convert(string &romanNumber)
 {
 	int length = romanNumber.length();
 	int prev = 0;
@@ -94,7 +94,8 @@ int convert(string& romanNumber)
 	return sum;
 }
 
-int main() {
+int main()
+{
 
 	cout << "Enter a Roman Numeral to conver to its decimal representation: ";
 	string userInput;
@@ -103,7 +104,8 @@ int main() {
 	int result = convert(userInput);
 
 	cout << endl;
-	cout << "Roman number: " << userInput << " = " << result << endl << endl;
+	cout << "Roman number: " << userInput << " = " << result << endl
+		 << endl;
 
 	return 0;
 }

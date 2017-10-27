@@ -1,13 +1,14 @@
 /* 	Write a program that asks the user for the lengths of the sides of a
 	rectangle.Then print
-	• The area and perimeter of the rectangle
-	• The length of the diagonal(use the Pythagorean theorem) 
+	ï¿½ The area and perimeter of the rectangle
+	ï¿½ The length of the diagonal(use the Pythagorean theorem) 
 */
 
 #include <iostream>
 #include <cmath>
 
-int main() {
+int main()
+{
 
 	std::cout << "Enter the sides of the rectangle: ";
 	double a_1, a_2, b_1, b_2;

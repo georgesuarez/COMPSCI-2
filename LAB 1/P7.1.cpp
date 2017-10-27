@@ -1,12 +1,12 @@
 /*
 	Implement a class Person with the following fields:
-		• the name
-		• a pointer to the person’s best friend (a Person*)
-		• a popularity counter that indicates how many other people have this person as their best friend
+		ï¿½ the name
+		ï¿½ a pointer to the personï¿½s best friend (a Person*)
+		ï¿½ a popularity counter that indicates how many other people have this person as their best friend
 	
 	Write a program that reads in a list of names, allocates a new Person for each of
 	them, and stores them in a vector<Person*>. Then ask the name of the best friend
-	for each of the Person objects. Locate the object matching the friend’s name and call
+	for each of the Person objects. Locate the object matching the friendï¿½s name and call
 	a set_best_friend member function to update the pointer and counter. Finally,
 	print out all Person objects, listing the name, best friend, and popularity counter for
 	each.
@@ -18,86 +18,88 @@
 
 using namespace std;
 
-class Person {
+class Person
+{
 
-public :
+  public:
 	Person();
 
 	Person(string newName);
 
-	Person(string, Person*, int);
+	Person(string, Person *, int);
 
 	~Person();
 
 	string get_name();
 	string get_best_friend();
 	int get_popularity();
-	void set_best_friend(Person* p);
+	void set_best_friend(Person *p);
 
-private:
+  private:
 	string name;
 	int popularity;
-	Person* bestFriend;
+	Person *bestFriend;
 };
 
-Person::Person() 
+Person::Person()
 {
 	popularity = 0;
 	bestFriend = 0;
 }
 
-Person::Person(string newName) 
+Person::Person(string newName)
 {
 	name = newName;
 	popularity = 0;
 	bestFriend = 0;
 }
 
-Person::Person(string newName, Person* p, int newPopularity) 
+Person::Person(string newName, Person *p, int newPopularity)
 {
 	name = newName;
 	popularity = newPopularity;
 	bestFriend = p;
 }
 
-void Person::set_best_friend(Person* p)
+void Person::set_best_friend(Person *p)
 {
 	bestFriend = p;
 	(p->popularity)++;
 }
 
-string Person::get_name() 
+string Person::get_name()
 {
 	return name;
 }
 
-string Person::get_best_friend() 
+string Person::get_best_friend()
 {
 
-	if (bestFriend != 0) 
+	if (bestFriend != 0)
 	{
 		return bestFriend->name;
 	}
-	else 
+	else
 	{
 		return "None";
 	}
 }
 
-int Person::get_popularity() 
+int Person::get_popularity()
 {
 	return popularity;
 }
 
-Person::~Person(){
-
+Person::~Person()
+{
 }
 
-int main() {
+int main()
+{
 
-	Person* p1;
+	Person *p1;
 	string name;
-	vector<Person*> friends;
+	vector<Person *> friends;
 
 	int num_of_friends;
 
@@ -106,8 +108,9 @@ int main() {
 	cin >> num_of_friends;
 
 	// Fill the vector with Person objects
-	while (num_of_friends > 0) {
-		
+	while (num_of_friends > 0)
+	{
+
 		cout << "Enter a name: ";
 		cin >> name;
 
@@ -119,19 +122,20 @@ int main() {
 
 	cout << endl;
 	unsigned int j;
-	for (unsigned int i = 0; i < friends.size(); i++) {
+	for (unsigned int i = 0; i < friends.size(); i++)
+	{
 		cout << "Who is " << friends[i]->get_name() << "'s best friend? ";
 		cin >> name;
 
 		// Search for best friend
-		for (j = 0; j < friends.size(); j++) 
+		for (j = 0; j < friends.size(); j++)
 			if (friends[j]->get_name() == name)
 				break;
-		
+
 		// Found the best friend
-		if (j < friends.size()) 
-				friends[i]->set_best_friend(friends[j]);
-		else 
+		if (j < friends.size())
+			friends[i]->set_best_friend(friends[j]);
+		else
 			cout << "Could not find your best friend " << name << endl;
 	}
 
@@ -141,7 +145,8 @@ int main() {
 
 	cout << "================================" << endl;
 
-	for (unsigned int i = 0; i < friends.size(); i++) {
+	for (unsigned int i = 0; i < friends.size(); i++)
+	{
 
 		cout << "Name: " << friends[i]->get_name() << endl;
 		cout << "Best Friend: " << friends[i]->get_best_friend() << endl;
@@ -151,8 +156,9 @@ int main() {
 
 	cout << "================================" << endl;
 
-	for (unsigned int i = 0; i < friends.size(); i++) {
-		
+	for (unsigned int i = 0; i < friends.size(); i++)
+	{
+
 		delete friends[i];
 	}
 

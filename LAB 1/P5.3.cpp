@@ -12,9 +12,10 @@
 
 using namespace std;
 
-class Address {
+class Address
+{
 
-public:
+  public:
 	// Constructor
 	Address();
 
@@ -28,17 +29,19 @@ public:
 
 	string comes_before(Address a);
 
-private:
+  private:
 	string street, city, state, postal_code;
 	int apartment_num, house_num;
 };
 
-Address::Address() {
+Address::Address()
+{
 	house_num = 0;
 	apartment_num = 0;
 }
 
-Address::Address(int new_house_num, string new_street, string new_city, string new_state, string new_postal_code) {
+Address::Address(int new_house_num, string new_street, string new_city, string new_state, string new_postal_code)
+{
 	house_num = new_house_num;
 	street = new_street;
 	city = new_city;
@@ -46,7 +49,8 @@ Address::Address(int new_house_num, string new_street, string new_city, string n
 	postal_code = new_postal_code;
 }
 
-Address::Address(int new_house_num, string new_street, int new_apartment_num, string new_city, string new_state, string new_postal_code) {
+Address::Address(int new_house_num, string new_street, int new_apartment_num, string new_city, string new_state, string new_postal_code)
+{
 	house_num = new_house_num;
 	street = new_street;
 	apartment_num = new_apartment_num;
@@ -55,8 +59,8 @@ Address::Address(int new_house_num, string new_street, int new_apartment_num, st
 	postal_code = new_postal_code;
 }
 
-
-void Address::print_address() const {
+void Address::print_address() const
+{
 
 	cout << "Address: " << house_num << " " << street << endl;
 	cout << "City: " << city << endl;
@@ -64,35 +68,39 @@ void Address::print_address() const {
 	cout << "Postal Code: " << postal_code << endl;
 }
 
-string Address::comes_before(Address a) {
+string Address::comes_before(Address a)
+{
 
-	if (postal_code.compare(a.postal_code) < 0) {
+	if (postal_code.compare(a.postal_code) < 0)
+	{
 
 		return postal_code;
 	}
 
-	else if (postal_code.compare(a.postal_code) > 0) {
+	else if (postal_code.compare(a.postal_code) > 0)
+	{
 
 		return a.postal_code;
 	}
 
-	else {
+	else
+	{
 
 		return postal_code = a.postal_code;
 	}
-
 }
 
-int main() {
+int main()
+{
 
 	Address address1(1243, "Elm St.", "Fontana", "CA", "92337");
 
-	address1.print_address();	
+	address1.print_address();
 
 	cout << endl;
 
 	Address address2(4321, "Haven Ave", 44, "Rancho Cucamonga", "CA", "91737");
-	
+
 	cout << endl;
 
 	address2.print_address();

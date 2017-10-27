@@ -13,7 +13,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	cout << "Enter The Amount Due: ";
 	double amt_due;

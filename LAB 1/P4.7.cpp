@@ -55,7 +55,8 @@ double cone_surface(double, double);
 
 const float PI = 3.14159;
 
-int main() {
+int main()
+{
 
 	double r, h;
 
@@ -78,26 +79,32 @@ int main() {
 
 // Function Declarations
 
-double sphere_volume(double r) {
+double sphere_volume(double r)
+{
 	return (4.0 / 3.0) * PI * pow(r, 3);
 }
 
-double sphere_surface(double r) {
+double sphere_surface(double r)
+{
 	return 4.0 * PI * pow(r, 2);
 }
 
-double cylinder_volume(double r, double h) {
+double cylinder_volume(double r, double h)
+{
 	return PI * pow(r, 2) * h;
 }
 
-double cylinder_surface(double r, double h) {
+double cylinder_surface(double r, double h)
+{
 	return (2.0 * PI * r * h) + (2.0 * PI * pow(r, 2));
 }
 
-double cone_volume(double r, double h) {
+double cone_volume(double r, double h)
+{
 	return (1.0 / 3.0) * PI * (r * r) * h;
 }
 
-double cone_surface(double r, double h) {
-	return PI * r *(r + sqrt(h * h + r * r));
+double cone_surface(double r, double h)
+{
+	return PI * r * (r + sqrt(h * h + r * r));
 }
