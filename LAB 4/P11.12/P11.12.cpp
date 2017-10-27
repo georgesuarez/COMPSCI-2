@@ -14,11 +14,12 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	vector<Appointment> appt_book;
 
-	Appointment* master = new Appointment();
+	Appointment *master = new Appointment();
 
 	Appointment a("Physical Check Up", 13, 7, 8);
 	Appointment b("Vaccine Shots", 15, 4, 5);
@@ -27,12 +28,11 @@ int main() {
 	appt_book.push_back(a);
 	appt_book.push_back(b);
 	appt_book.push_back(c);
-	
+
 	cout << "Enter the description of the appointment: ";
 	string description;
 	getline(cin, description);
 	cout << endl;
-
 
 	cout << "Enter the appointment day: ";
 	int day;
@@ -59,7 +59,6 @@ int main() {
 
 	cout << "List of appointments sorted by day: " << endl;
 	master->print_appt_book(appt_book);
-
 
 	delete master;
 

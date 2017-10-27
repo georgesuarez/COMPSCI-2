@@ -10,9 +10,10 @@
 
 using namespace std;
 
-class Employee {
+class Employee
+{
 
-public:
+  public:
 	Employee();
 
 	Employee(string, string, double);
@@ -21,14 +22,12 @@ public:
 
 	string get_name() const;
 
-private:
-
+  private:
 	double salary;
 
 	string first_name;
 
 	string last_name;
-
 };
 
 Employee::Employee()
@@ -36,7 +35,7 @@ Employee::Employee()
 	salary = 0.0;
 }
 
-Employee::Employee(string new_first_name, string new_last_name , double new_salary)
+Employee::Employee(string new_first_name, string new_last_name, double new_salary)
 {
 	first_name = new_first_name;
 	last_name = new_last_name;
@@ -53,7 +52,7 @@ string Employee::get_name() const
 	return first_name + " " + last_name;
 }
 
-void swap(int& a, int& b)
+void swap(int &a, int &b)
 {
 	int temp = 0;
 	temp = a;
@@ -61,7 +60,7 @@ void swap(int& a, int& b)
 	b = temp;
 }
 
-void selection_sort(vector<double>& a, vector<Employee*>& e)
+void selection_sort(vector<double> &a, vector<Employee *> &e)
 {
 	for (unsigned int i = 0; i < a.size(); i++)
 	{
@@ -81,17 +80,18 @@ void selection_sort(vector<double>& a, vector<Employee*>& e)
 	}
 }
 
-void print_employees(vector<Employee*>& e) 
+void print_employees(vector<Employee *> &e)
 {
 	for (unsigned int i = 0; i < e.size(); i++)
 	{
 		cout << "Name: " << e[i]->get_name() << endl
-			<< "Salary: " << fixed << setprecision(2) 
-			<< e[i]->get_salary() << endl << endl;
+			 << "Salary: " << fixed << setprecision(2)
+			 << e[i]->get_salary() << endl
+			 << endl;
 	}
 }
 
-void delete_employees(vector<Employee*>& e)
+void delete_employees(vector<Employee *> &e)
 {
 	for (unsigned int i = 0; i < e.size(); i++)
 	{
@@ -99,7 +99,8 @@ void delete_employees(vector<Employee*>& e)
 	}
 }
 
-int main() {
+int main()
+{
 
 	ifstream inFile;
 
@@ -114,12 +115,12 @@ int main() {
 	string first_name, last_name;
 	double salary;
 
-	vector<Employee*> employees;
+	vector<Employee *> employees;
 
 	while (inFile >> first_name >> last_name >> salary)
 	{
 
-		Employee* e = new Employee(first_name, last_name, salary);
+		Employee *e = new Employee(first_name, last_name, salary);
 
 		employees.push_back(e);
 	}
@@ -131,21 +132,24 @@ int main() {
 		salaries.push_back(employees[i]->get_salary());
 	}
 
-	cout << "Employee's Names and Salaries: " << endl << endl;
+	cout << "Employee's Names and Salaries: " << endl
+		 << endl;
 	print_employees(employees);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	selection_sort(salaries, employees);
 
-	cout << "Employee's sorted by their salaries: " << endl << endl;
-	
+	cout << "Employee's sorted by their salaries: " << endl
+		 << endl;
+
 	print_employees(employees);
 
 	delete_employees(employees);
 
-	cout << endl << endl;
-
+	cout << endl
+		 << endl;
 
 	return 0;
 }

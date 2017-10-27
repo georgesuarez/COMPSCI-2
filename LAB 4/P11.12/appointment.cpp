@@ -25,8 +25,7 @@ int Appointment::get_end_hr() const
 	return end_hr;
 }
 
-
-void Appointment::selection_sort(vector<Appointment>& a)
+void Appointment::selection_sort(vector<Appointment> &a)
 {
 	for (unsigned int i = 0; i < a.size(); i++)
 	{
@@ -45,7 +44,7 @@ void Appointment::selection_sort(vector<Appointment>& a)
 	}
 }
 
-bool Appointment::binary_search(vector<Appointment>& sorted_vec, int key)
+bool Appointment::binary_search(vector<Appointment> &sorted_vec, int key)
 {
 	int left = 0;
 	int mid = 0;
@@ -72,9 +71,9 @@ bool Appointment::binary_search(vector<Appointment>& sorted_vec, int key)
 	return false;
 }
 
-void Appointment::insert(vector<Appointment>& vec, Appointment& b)
+void Appointment::insert(vector<Appointment> &vec, Appointment &b)
 {
-	Appointment* master = new Appointment();
+	Appointment *master = new Appointment();
 
 	bool present = binary_search(vec, b.get_day());
 	int pos = 0;
@@ -90,14 +89,16 @@ void Appointment::insert(vector<Appointment>& vec, Appointment& b)
 			}
 		}
 
-		if ((vec[pos].get_end_hr() <= b.get_start_hr()) || (b.get_start_hr() < 
-			vec[pos].get_start_hr() && b.get_end_hr() <= vec[pos].get_start_hr()))
+		if ((vec[pos].get_end_hr() <= b.get_start_hr()) || (b.get_start_hr() <
+																vec[pos].get_start_hr() &&
+															b.get_end_hr() <= vec[pos].get_start_hr()))
 		{
 			vec.insert(vec.begin() + pos, b);
 		}
 		else
 		{
-			cout << "Time is conflicting with another appointment." << endl << endl;
+			cout << "Time is conflicting with another appointment." << endl
+				 << endl;
 		}
 	}
 	else
@@ -106,14 +107,14 @@ void Appointment::insert(vector<Appointment>& vec, Appointment& b)
 	}
 }
 
-void Appointment::swap(Appointment& a, Appointment& b)
+void Appointment::swap(Appointment &a, Appointment &b)
 {
 	Appointment temp = a;
 	a = b;
 	b = temp;
 }
 
-void Appointment::print_appt_book(vector<Appointment>& a)
+void Appointment::print_appt_book(vector<Appointment> &a)
 {
 
 	for (unsigned int i = 0; i < a.size(); i++)
@@ -121,9 +122,9 @@ void Appointment::print_appt_book(vector<Appointment>& a)
 		cout << "Description: " << a[i].get_desc() << endl;
 		cout << "Day: " << a[i].get_day() << endl;
 		cout << "Start time: " << a[i].get_start_hr() << endl;
-		cout << "End time: " << a[i].get_end_hr() << endl << endl;
+		cout << "End time: " << a[i].get_end_hr() << endl
+			 << endl;
 	}
 
 	cout << endl;
 }
-

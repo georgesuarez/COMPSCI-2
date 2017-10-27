@@ -10,9 +10,10 @@
 
 using namespace std;
 
-class Employee {
+class Employee
+{
 
-public:
+  public:
 	Employee();
 
 	Employee(string, string, double);
@@ -21,14 +22,12 @@ public:
 
 	string get_name() const;
 
-private:
-
+  private:
 	double salary;
 
 	string first_name;
 
 	string last_name;
-
 };
 
 Employee::Employee()
@@ -53,13 +52,12 @@ string Employee::get_name() const
 	return first_name + " " + last_name;
 }
 
-void merge(vector<double>& a, vector<Employee*>& e, int from, int mid, int to)
+void merge(vector<double> &a, vector<Employee *> &e, int from, int mid, int to)
 {
 
 	int size = to - from + 1;
 	vector<double> temp(size);
-	vector<Employee*> e_temp(size);
-
+	vector<Employee *> e_temp(size);
 
 	int i1 = from;
 	int i2 = mid + 1;
@@ -81,7 +79,7 @@ void merge(vector<double>& a, vector<Employee*>& e, int from, int mid, int to)
 		}
 		j++;
 	}
-	
+
 	while (i1 <= mid)
 	{
 		temp[j] = a[i1];
@@ -105,26 +103,28 @@ void merge(vector<double>& a, vector<Employee*>& e, int from, int mid, int to)
 	}
 }
 
-void merge_sort(vector<double>& a, vector<Employee*>& e, int from, int to)
+void merge_sort(vector<double> &a, vector<Employee *> &e, int from, int to)
 {
-	if (from == to) return;
+	if (from == to)
+		return;
 	int mid = (from + to) / 2;
 	merge_sort(a, e, from, mid);
 	merge_sort(a, e, mid + 1, to);
 	merge(a, e, from, mid, to);
 }
 
-void print_employees(vector<Employee*>& e)
+void print_employees(vector<Employee *> &e)
 {
 	for (unsigned int i = 0; i < e.size(); i++)
 	{
 		cout << "Name: " << e[i]->get_name() << endl
-			<< "Salary: " << fixed << setprecision(2)
-			<< e[i]->get_salary() << endl << endl;
+			 << "Salary: " << fixed << setprecision(2)
+			 << e[i]->get_salary() << endl
+			 << endl;
 	}
 }
 
-void delete_employees(vector<Employee*>& e)
+void delete_employees(vector<Employee *> &e)
 {
 	for (unsigned int i = 0; i < e.size(); i++)
 	{
@@ -132,7 +132,8 @@ void delete_employees(vector<Employee*>& e)
 	}
 }
 
-int main() {
+int main()
+{
 
 	ifstream inFile;
 
@@ -147,12 +148,12 @@ int main() {
 	string first_name, last_name;
 	double salary;
 
-	vector<Employee*> employees;
+	vector<Employee *> employees;
 
 	while (inFile >> first_name >> last_name >> salary)
 	{
 
-		Employee* e = new Employee(first_name, last_name, salary);
+		Employee *e = new Employee(first_name, last_name, salary);
 
 		employees.push_back(e);
 	}
@@ -164,20 +165,24 @@ int main() {
 		salaries.push_back(employees[i]->get_salary());
 	}
 
-	cout << "Employee's Names and Salaries: " << endl << endl;
+	cout << "Employee's Names and Salaries: " << endl
+		 << endl;
 	print_employees(employees);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	merge_sort(salaries, employees, 0, employees.size() - 1);
 
-	cout << "Employee's sorted by their salaries: " << endl << endl;
+	cout << "Employee's sorted by their salaries: " << endl
+		 << endl;
 
 	print_employees(employees);
 
 	delete_employees(employees);
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 
 	return 0;
 }
