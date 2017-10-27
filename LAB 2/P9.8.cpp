@@ -4,10 +4,10 @@
 	program that asks the user for the name of an employee, finds the record with that
 	name, and displays the record. Then the program should give the following options
 	to the user:
-	• Change the salary of this record
-	• View the next record
-	• Find another employee
-	• Quit
+	ï¿½ Change the salary of this record
+	ï¿½ View the next record
+	ï¿½ Find another employee
+	ï¿½ Quit
 */
 
 #include <iostream>
@@ -20,7 +20,8 @@ using namespace std;
 const int NEWLINE_LENGTH = 2;
 const int RECORD_SIZE = 30 + 10 + NEWLINE_LENGTH;
 
-int main() {
+int main()
+{
 
 	cout << "Please enter the data file name: ";
 	string filename;
@@ -31,7 +32,7 @@ int main() {
 	fs.open(filename.c_str());
 	fs.seekg(0, ios::end); // Go to end of file
 
-	find:
+find:
 
 	int n_record = fs.tellg() / RECORD_SIZE;
 
@@ -88,7 +89,8 @@ int main() {
 
 	fs.getline(str, MAX);
 
-	cout << str << endl << endl;
+	cout << str << endl
+		 << endl;
 
 	for (int i = 30; i < 40; i++)
 	{
@@ -144,7 +146,8 @@ int main() {
 		if (pos + 1 < n_record)
 		{
 			fs.getline(str, MAX);
-			cout << "Next record is: " << str << endl << endl;
+			cout << "Next record is: " << str << endl
+				 << endl;
 		}
 		else
 		{
@@ -153,7 +156,7 @@ int main() {
 	}
 	if (user_input == 3)
 		goto find;
-	
+
 	fs.seekp(pos * RECORD_SIZE, ios::beg);
 	fs.close();
 

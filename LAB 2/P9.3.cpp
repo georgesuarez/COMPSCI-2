@@ -12,7 +12,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	cout << "Filename: ";
 	string filename;
@@ -22,25 +23,29 @@ int main() {
 
 	infile.open(filename.c_str());
 
-	if (infile.fail()) {
+	if (infile.fail())
+	{
 		cout << "Error opening file." << endl;
 		exit(1);
 	}
 
-	int letter_freq[26] = { 0 };
+	int letter_freq[26] = {0};
 
 	char c;
-	while (infile.get(c)) {
-		if (isalpha(c)) {
+	while (infile.get(c))
+	{
+		if (isalpha(c))
+		{
 			c = toupper(c);
 
 			int index = c - 'A';
-			
+
 			++(letter_freq[index]);
 		}
 	}
 
-	for (int i = 0; i < 26; ++i) {
+	for (int i = 0; i < 26; ++i)
+	{
 		cout << " " << char(i + 'A') << " occurs " << setw(5) << letter_freq[i] << " times" << endl;
 	}
 

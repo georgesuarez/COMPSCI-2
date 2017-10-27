@@ -18,7 +18,7 @@ double string_to_double(string s)
 	return x;
 }
 
-void raise_salary(vector<Employee>& employees, double percent)
+void raise_salary(vector<Employee> &employees, double percent)
 {
 	for (unsigned int i = 0; i < employees.size(); i++)
 	{
@@ -27,7 +27,7 @@ void raise_salary(vector<Employee>& employees, double percent)
 	}
 }
 
-void lower_salary(vector<Employee>& employees, double percent)
+void lower_salary(vector<Employee> &employees, double percent)
 {
 	for (unsigned int i = 0; i < employees.size(); i++)
 	{
@@ -36,7 +36,7 @@ void lower_salary(vector<Employee>& employees, double percent)
 	}
 }
 
-void read_employee(Employee& e, vector<Employee>& employees, istream& in)
+void read_employee(Employee &e, vector<Employee> &employees, istream &in)
 {
 	if (in.fail())
 	{
@@ -52,14 +52,14 @@ void read_employee(Employee& e, vector<Employee>& employees, istream& in)
 		e = Employee(name, salary);
 		employees.push_back(e);
 	}
-	
 }
 
-void write_employee(vector<Employee>& employees, ostream& out)
+void write_employee(vector<Employee> &employees, ostream &out)
 {
 	while (!out.eof())
 	{
-		for (unsigned int i = 0; i < employees.size(); i++) {
+		for (unsigned int i = 0; i < employees.size(); i++)
+		{
 			out << employees[i].get_name()
 				<< setw(10 + (30 - employees[i].get_name().length()))
 				<< fixed << setprecision(2)
@@ -68,9 +68,9 @@ void write_employee(vector<Employee>& employees, ostream& out)
 	}
 }
 
+int main()
+{
 
-int main() {
-	
 	int user_input = 0;
 	cout << "Please enter the data file name: ";
 	string filename;
@@ -78,8 +78,7 @@ int main() {
 	fstream fs;
 	fs.open(filename.c_str());
 	fs.seekg(0, ios::end); // Go to end of file
-	
-		
+
 	cout << "1. Raise salaries " << endl;
 	cout << "2. Lower salaries " << endl;
 	cout << "3. Quit " << endl;
@@ -91,53 +90,54 @@ int main() {
 		cout << endl;
 		Employee e;
 		vector<Employee> employees;
-	
+
 		cout << "Enter a percentage: ";
 		double salary_percentage;
 		cin >> salary_percentage;
 		cout << endl;
-	
+
 		fs.seekg(RECORD_SIZE, ios::beg);
 		read_employee(e, employees, fs);
 		raise_salary(employees, salary_percentage);
-	
+
 		cout << "Employee's name & new salaries: " << endl;
 		for (unsigned int i = 0; i < employees.size(); i++)
 		{
-			cout << employees[i].get_name() << fixed << setprecision(2) 
+			cout << employees[i].get_name() << fixed << setprecision(2)
 				 << " " << employees[i].get_salary() << endl;
 		}
-	
-		fs.seekp(RECORD_SIZE, ios::beg); 
+
+		fs.seekp(RECORD_SIZE, ios::beg);
 		write_employee(employees, fs);
-		cout << endl << endl;
+		cout << endl
+			 << endl;
 	}
 
 	else if (user_input == 2)
 	{
 		cout << endl;
-			
+
 		Employee e;
 		vector<Employee> employees;
-	
+
 		cout << "Enter a percentage: ";
 		double salary_percentage;
 		cin >> salary_percentage;
 		cout << endl;
-	
+
 		fs.seekg(RECORD_SIZE, ios::beg);
 		read_employee(e, employees, fs);
 		lower_salary(employees, salary_percentage);
-	
+
 		cout << "Employee's name & new salaries: " << endl;
 		for (unsigned int i = 0; i < employees.size(); i++)
 		{
-			cout << employees[i].get_name() << fixed << setprecision(2) 
+			cout << employees[i].get_name() << fixed << setprecision(2)
 				 << " " << employees[i].get_salary() << endl;
 		}
-			cout << endl;
+		cout << endl;
 	}
-		
+
 	fs.close();
 
 	return 0;

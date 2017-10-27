@@ -1,7 +1,7 @@
 /**
 	Junk mail. Write a program that reads in two files: a template and a
 	database. The template file contains text and tags. The tags have the form |1| |2|
-	|3|… and need to be replaced with the first, second, third, … field in the current
+	|3|ï¿½ and need to be replaced with the first, second, third, ï¿½ field in the current
 	database record.
 
 	A typical database looks like this:
@@ -27,7 +27,8 @@ And here is a typical form letter:
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	ifstream database;
 
@@ -66,7 +67,7 @@ int main() {
 	ofstream output("output.txt");
 
 	string more_data;
-	
+
 	while (getline(inFile, more_data))
 	{
 		size_t pos = more_data.find("|1| |2| |3|");
@@ -74,13 +75,13 @@ int main() {
 		{
 			more_data.replace(pos, more_data.length(), info[0] + " " + info[1] + " " + info[2]);
 		}
-		
+
 		size_t pos2 = more_data.find("|4|");
 		if (pos2 != string::npos)
 		{
 			more_data.replace(pos2, more_data.length(), info[3]);
 		}
-		
+
 		size_t pos3 = more_data.find("|5|, |6| |7|");
 		if (pos3 != string::npos)
 		{

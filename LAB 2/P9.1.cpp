@@ -1,7 +1,7 @@
 /*
 	Write a program that asks the user for a file name and displays the
 	number of characters, words, and lines in that file. Then have the program ask for
-	the name of the next file. When the user enters a file that doesn’t exist(such as the
+	the name of the next file. When the user enters a file that doesnï¿½t exist(such as the
 	empty string), the program should exit. 
 */
 #include <iostream>
@@ -10,21 +10,23 @@
 
 using namespace std;
 
-
-int main() {
+int main()
+{
 
 	bool more = true;
 	int words = 0;
 	int chars = 0;
 	int lines = 0;
 
-	while (more) {
-		
+	while (more)
+	{
+
 		cout << "Enter the filename: ";
 		string filename;
 		getline(cin, filename);
 
-		if (filename == "") {
+		if (filename == "")
+		{
 			cout << "File does not exist." << endl;
 			exit(1);
 		}
@@ -33,15 +35,18 @@ int main() {
 
 		infile.open(filename.c_str());
 
-		if (infile.fail()) {
+		if (infile.fail())
+		{
 			cout << "Error opening file." << endl;
 			more = false;
 		}
 
 		string data;
 
-		while (infile >> data) {
-			if (infile.peek() == '\n') ++lines;
+		while (infile >> data)
+		{
+			if (infile.peek() == '\n')
+				++lines;
 			chars += data.length();
 			++words;
 		}
@@ -53,6 +58,6 @@ int main() {
 
 		cout << endl;
 	}
-	
+
 	return 0;
 }
