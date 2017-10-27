@@ -12,21 +12,21 @@ float Complex::get_imaginary_part() const
 	return img;
 }
 
-Complex& Complex::operator+=(Complex& c)
+Complex &Complex::operator+=(Complex &c)
 {
 	real += c.real;
 	img += c.img;
 	return *this;
 }
 
-Complex& Complex::operator-=(Complex& c)
+Complex &Complex::operator-=(Complex &c)
 {
 	real -= c.real;
 	img -= c.img;
 	return *this;
 }
 
-Complex& Complex::operator*=(Complex& c)
+Complex &Complex::operator*=(Complex &c)
 {
 	float r = (real * c.real) - (img * c.img);
 	float i = (real * c.img) + (img * c.real);
@@ -36,7 +36,7 @@ Complex& Complex::operator*=(Complex& c)
 	return *this;
 }
 
-Complex& Complex::operator/=(Complex& c)
+Complex &Complex::operator/=(Complex &c)
 {
 	float r = (real * c.real) + (img * c.img);
 	float i = -(real * c.img) + (img * c.real);
@@ -46,35 +46,35 @@ Complex& Complex::operator/=(Complex& c)
 	return *this;
 }
 
-Complex operator+(const Complex& left, const Complex& right)
+Complex operator+(const Complex &left, const Complex &right)
 {
 	return Complex((left.get_real_part() + right.get_real_part()), (left.get_imaginary_part() +
-		right.get_imaginary_part()));
+																	right.get_imaginary_part()));
 }
 
-Complex operator-(const Complex& left, const Complex& right)
+Complex operator-(const Complex &left, const Complex &right)
 {
-	return Complex((left.get_real_part() - right.get_real_part()), 
-		(left.get_imaginary_part() - right.get_imaginary_part()));
+	return Complex((left.get_real_part() - right.get_real_part()),
+				   (left.get_imaginary_part() - right.get_imaginary_part()));
 }
 
-Complex operator*(const Complex& left, const Complex& right)
+Complex operator*(const Complex &left, const Complex &right)
 {
 	return Complex((left.get_real_part() * right.get_real_part()) - (left.get_imaginary_part() * right.get_imaginary_part()),
-		(left.get_real_part() * right.get_imaginary_part()) + (left.get_imaginary_part() * right.get_real_part()));
+				   (left.get_real_part() * right.get_imaginary_part()) + (left.get_imaginary_part() * right.get_real_part()));
 }
 
-Complex operator/(const Complex& left, const Complex& right)
+Complex operator/(const Complex &left, const Complex &right)
 {
 	double d = (right.get_real_part() * right.get_real_part()) + (right.get_imaginary_part() * right.get_imaginary_part());
 
 	Complex result(((left.get_real_part() * right.get_real_part()) + (left.get_imaginary_part() * right.get_imaginary_part())) / d,
-		((left.get_real_part() * right.get_imaginary_part()) + (left.get_imaginary_part() * right.get_real_part())) / d);
+				   ((left.get_real_part() * right.get_imaginary_part()) + (left.get_imaginary_part() * right.get_real_part())) / d);
 
 	return result;
 }
 
-ostream& operator<<(ostream& out, const Complex& c)
+ostream &operator<<(ostream &out, const Complex &c)
 {
 	cout << c.get_real_part();
 
@@ -90,12 +90,12 @@ ostream& operator<<(ostream& out, const Complex& c)
 	return out;
 }
 
-istream& operator>>(istream& in, Complex& r)
+istream &operator>>(istream &in, Complex &r)
 {
 	float real, img;
 
 	in >> real;
-	
+
 	char c;
 
 	in >> c;
@@ -108,7 +108,7 @@ istream& operator>>(istream& in, Complex& r)
 	}
 
 	in >> c;
-	
+
 	if (c == 'i')
 	{
 		in >> img;

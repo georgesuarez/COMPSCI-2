@@ -7,24 +7,25 @@
 
 using namespace std;
 
-class Polynomial {
+class Polynomial
+{
 
-public:
-	Polynomial() {};
+  public:
+	Polynomial(){};
 	Polynomial(vector<float> c) : coeff(c) {}
 
 	float read(int i) const;
 	int size() const;
 	void push(float value);
 
-private:
+  private:
 	vector<float> coeff;
 };
 
-Polynomial operator+(const Polynomial& left, const Polynomial& right);
-Polynomial operator-(const Polynomial& left, const Polynomial& right);
-Polynomial operator*(const Polynomial& left, const Polynomial& right);
+Polynomial operator+(const Polynomial &left, const Polynomial &right);
+Polynomial operator-(const Polynomial &left, const Polynomial &right);
+Polynomial operator*(const Polynomial &left, const Polynomial &right);
 
-ostream& operator<<(ostream& out, const Polynomial& p);
+ostream &operator<<(ostream &out, const Polynomial &p);
 
 #endif

@@ -3,7 +3,8 @@
 #include "polynomial.h"
 using namespace std;
 
-int main() {
+int main()
+{
 
 	vector<float> acoeff(3);
 
@@ -11,7 +12,7 @@ int main() {
 	acoeff[2] = 1;
 
 	vector<float> bcoeff(2);
-	
+
 	bcoeff[1] = 4;
 	bcoeff[0] = 2;
 
@@ -19,11 +20,13 @@ int main() {
 	Polynomial b(bcoeff);
 
 	cout << "a = " << a << endl;
-	cout << "b = " << b << endl << endl;
+	cout << "b = " << b << endl
+		 << endl;
 
 	cout << "a + b = " << a + b << endl;
 	cout << "a - b = " << a - b << endl;
-	cout << "a * b = " << a * b << endl << endl;
+	cout << "a * b = " << a * b << endl
+		 << endl;
 
 	return 0;
 }

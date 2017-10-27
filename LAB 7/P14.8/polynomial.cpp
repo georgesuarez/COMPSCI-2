@@ -18,10 +18,10 @@ float Polynomial::read(int i) const
 	return coeff[i];
 }
 
-Polynomial operator+(const Polynomial& left, const Polynomial& right)
+Polynomial operator+(const Polynomial &left, const Polynomial &right)
 {
 	Polynomial p, extra;
-	
+
 	int s1 = left.size();
 	int s2 = right.size();
 
@@ -42,14 +42,14 @@ Polynomial operator+(const Polynomial& left, const Polynomial& right)
 
 	for (int i = 0; i < limit1; i++)
 		p.push(left.read(i) + right.read(i));
-	
+
 	for (int i = limit1; i < limit2; i++)
 		p.push(extra.read(i));
 
 	return p;
 }
 
-Polynomial operator-(const Polynomial& left, const Polynomial& right)
+Polynomial operator-(const Polynomial &left, const Polynomial &right)
 {
 	Polynomial p, extra;
 
@@ -73,7 +73,7 @@ Polynomial operator-(const Polynomial& left, const Polynomial& right)
 
 	for (int i = 0; i < limit1; i++)
 		p.push(left.read(i) - right.read(i));
-	
+
 	for (int i = limit1; i < limit2; i++)
 		if (limit1 == s1)
 			p.push(-extra.read(i));
@@ -83,7 +83,7 @@ Polynomial operator-(const Polynomial& left, const Polynomial& right)
 	return p;
 }
 
-Polynomial operator*(const Polynomial& left, const Polynomial& right)
+Polynomial operator*(const Polynomial &left, const Polynomial &right)
 {
 	vector<float> temp(left.size() + right.size() - 1);
 
@@ -101,12 +101,12 @@ Polynomial operator*(const Polynomial& left, const Polynomial& right)
 	return Polynomial(temp);
 }
 
-ostream& operator<<(ostream& out, const Polynomial& p)
+ostream &operator<<(ostream &out, const Polynomial &p)
 {
 	for (int i = p.size() - 1; i >= 0; i--)
 	{
 		float value = p.read(i);
-		
+
 		if (value != 0)
 		{
 			if (i < p.size() - 1)

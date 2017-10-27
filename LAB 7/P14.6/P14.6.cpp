@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	Complex a, b, c, d(-5), e(1, -2);
 
@@ -17,17 +18,19 @@ int main() {
 	cout << "b = " << b << endl;
 	cout << "c = " << c << endl;
 	cout << "d = " << d << endl;
-	cout << "e = " << e << endl << endl;
+	cout << "e = " << e << endl
+		 << endl;
 
 	cout << "b + c = " << b + c << endl;
 	cout << "b - c = " << b - c << endl;
 	cout << "b * c = " << b * c << endl;
-	cout << "b / c = " << b / c << endl << endl;
+	cout << "b / c = " << b / c << endl
+		 << endl;
 
 	b += c;
 
 	cout << b << endl;
-	
+
 	b -= c;
 	cout << b << endl;
 
@@ -35,7 +38,8 @@ int main() {
 	cout << b << endl;
 
 	b /= c;
-	cout << b << endl << endl;
+	cout << b << endl
+		 << endl;
 
 	return 0;
 }

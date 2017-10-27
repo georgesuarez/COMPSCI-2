@@ -11,7 +11,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	Fraction a(-4, 2);
 
@@ -19,19 +20,22 @@ int main() {
 
 	Fraction c(0, 0);
 
-	cout << "Constructed values a = " << a << " b = " << b << " c = " << c << endl << endl;
+	cout << "Constructed values a = " << a << " b = " << b << " c = " << c << endl
+		 << endl;
 
 	if ((bool)a)
 	{
-		cout << a << " is a proper fraction." << endl << endl;
+		cout << a << " is a proper fraction." << endl
+			 << endl;
 	}
 	else
 	{
-		cout << a << " is not a proper fraction." << endl << endl;
+		cout << a << " is not a proper fraction." << endl
+			 << endl;
 	}
 
-	cout << "one-third of " << b << " is " << (double)b / 3 << endl << endl;
-
+	cout << "one-third of " << b << " is " << (double)b / 3 << endl
+		 << endl;
 
 	return 0;
 }
