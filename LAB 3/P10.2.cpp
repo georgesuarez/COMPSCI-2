@@ -14,27 +14,28 @@
 
 using namespace std;
 
-class Sentence {
-public:
+class Sentence
+{
+  public:
 	Sentence();
 
 	Sentence(string new_word);
 
 	string get_text() const;
-	
-    string reverse(string& s1);
 
-private:
+	string reverse(string &s1);
+
+  private:
 	string word;
 };
 
-Sentence::Sentence() {};
+Sentence::Sentence(){};
 
 Sentence::Sentence(string new_word) { word = new_word; }
 
 string Sentence::get_text() const { return word; }
 
-string Sentence::reverse(string& s1)
+string Sentence::reverse(string &s1)
 {
 	if (s1.length() == 1)
 	{
@@ -52,7 +53,7 @@ int main()
 	cout << "Enter your word: ";
 	getline(cin, word);
 
-	Sentence* greeting = new Sentence(word);
+	Sentence *greeting = new Sentence(word);
 
 	cout << endl;
 	cout << "Your word is: " << greeting->get_text() << endl;

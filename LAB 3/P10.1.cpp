@@ -19,15 +19,17 @@ using namespace std;
 int factorial(int n)
 {
 	int temp = 0;
-	
-	if (n <= 1) return 1;
+
+	if (n <= 1)
+		return 1;
 
 	temp = n * factorial(n - 1);
 
 	return temp;
 }
 
-int main() {
+int main()
+{
 
 	cout << "Enter a string: ";
 	string word;
@@ -36,8 +38,7 @@ int main() {
 	int permuatations = factorial(word.length());
 
 	cout << "The word " << word << " has "
-		<< permuatations << " permuatations." << endl;
-
+		 << permuatations << " permuatations." << endl;
 
 	return 0;
 }

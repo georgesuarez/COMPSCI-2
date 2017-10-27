@@ -42,7 +42,6 @@ int compute(const char *s, const char *t, int ss, int tt)
 		return -1;
 }
 
-
 int main()
 {
 	char *s = "mississippi";
@@ -50,10 +49,9 @@ int main()
 
 	string ss = "mississippi";
 	string tt = "sip";
-	
+
 	cout << "Starting position of the second string " << t << endl;
 	cout << "In the first string " << s << " is: " << compute(s, t, strlen(s), strlen(t)) << endl;
 
 	return 0;
-
 }
