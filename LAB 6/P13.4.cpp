@@ -5,7 +5,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
 	ifstream readFile;
 
@@ -33,8 +34,6 @@ int main() {
 			duplicates.insert(*iter);
 		}
 	}
-
-
 
 	cout << endl;
 

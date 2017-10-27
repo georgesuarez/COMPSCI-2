@@ -16,7 +16,7 @@ int main()
 	ifstream readFile;
 
 	readFile.open(file.c_str(), ifstream::out);
-	
+
 	map<string, int> words;
 	string word;
 
@@ -34,7 +34,7 @@ int main()
 	}
 
 	map<string, int>::iterator iter;
-	
+
 	for (iter = words.begin(); iter != words.end(); iter++)
 	{
 		cout << iter->first << " appears " << iter->second << " times" << endl;
@@ -42,4 +42,3 @@ int main()
 
 	return 0;
 }
-
