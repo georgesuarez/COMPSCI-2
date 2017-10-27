@@ -12,21 +12,23 @@ using namespace std;
 class List;
 class Iterator;
 
-class Node {
-public:
+class Node
+{
+  public:
 	Node(string s);
 
-private:
+  private:
 	string data;
-	Node* previous;
-	Node* next;
+	Node *previous;
+	Node *next;
 	friend class List;
 	friend class Iterator;
 };
 
-class List {
+class List
+{
 
-public:
+  public:
 	List();
 	void push_back(string data);
 	void insert(Iterator iter, string s);
@@ -36,23 +38,25 @@ public:
 	Iterator end();
 	void reverse();
 
-private:
-	Node* first;
-	Node* last;
+  private:
+	Node *first;
+	Node *last;
 	friend class Iterator;
 };
 
-class Iterator {
-public:
+class Iterator
+{
+  public:
 	Iterator();
 
 	string get() const;
 	void next();
 	void previous();
 	bool equals(Iterator b) const;
-private:
-	Node* position;
-	List* container;
+
+  private:
+	Node *position;
+	List *container;
 	friend class List;
 };
 
@@ -71,7 +75,7 @@ List::List()
 
 void List::push_back(string data)
 {
-	Node* new_node = new Node(data);
+	Node *new_node = new Node(data);
 	if (last == NULL)
 	{
 		first = new_node;
@@ -93,26 +97,25 @@ void List::insert(Iterator iter, string s)
 		return;
 	}
 
-	Node* after = iter.position;
-	Node* before = after->previous;
-	Node* new_node = new Node(s);
-	
+	Node *after = iter.position;
+	Node *before = after->previous;
+	Node *new_node = new Node(s);
+
 	new_node->previous = before;
 	new_node->next = after;
 	after->previous = new_node;
-	
+
 	if (before == NULL)
 		first = new_node;
 	else
 		before->next = new_node;
-
 }
 
 void List::reverse()
 {
-	Node* curr_node = first;
-	Node* next_node = NULL;
-	Node* prev_node = NULL;
+	Node *curr_node = first;
+	Node *next_node = NULL;
+	Node *prev_node = NULL;
 
 	while (curr_node != NULL)
 	{
@@ -127,7 +130,7 @@ void List::reverse()
 
 int List::get_size()
 {
-	Node* curr_node = first;
+	Node *curr_node = first;
 
 	int size = 0;
 
@@ -143,9 +146,9 @@ int List::get_size()
 Iterator List::erase(Iterator iter)
 {
 	assert(iter.position != NULL);
-	Node* remove = iter.position;
-	Node* before = remove->previous;
-	Node* after = remove->next;
+	Node *remove = iter.position;
+	Node *before = remove->previous;
+	Node *after = remove->next;
 	if (remove == first)
 		first = after;
 	else
@@ -209,7 +212,8 @@ bool Iterator::equals(Iterator b) const
 {
 	return position == b.position;
 }
-int main() {
+int main()
+{
 
 	List staff;
 

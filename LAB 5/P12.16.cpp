@@ -8,16 +8,16 @@
 
 using namespace std;
 
-struct Node {
+struct Node
+{
 
 	string data;
-	Node* next;
+	Node *next;
 };
 
 class Queue
 {
-public:
-	
+  public:
 	Queue();
 
 	void push(string s);
@@ -27,10 +27,9 @@ public:
 	string front();
 	string back();
 
-private:
-
-	Node* rear;
-	Node* top;
+  private:
+	Node *rear;
+	Node *top;
 	int sizeOfQueue;
 };
 
@@ -43,7 +42,7 @@ Queue::Queue()
 
 void Queue::push(string s)
 {
-	Node* temp = new Node;
+	Node *temp = new Node;
 	temp->data = s;
 	temp->next = NULL;
 
@@ -62,7 +61,7 @@ void Queue::push(string s)
 
 void Queue::pop()
 {
-	Node* temp;
+	Node *temp;
 
 	if (top != NULL)
 	{
@@ -79,7 +78,7 @@ void Queue::pop()
 
 string Queue::front()
 {
-	Node* temp = top;
+	Node *temp = top;
 
 	if (top != NULL)
 	{
@@ -93,7 +92,7 @@ string Queue::front()
 
 string Queue::back()
 {
-	Node* temp = rear;
+	Node *temp = rear;
 
 	if (rear != NULL)
 	{
@@ -112,7 +111,7 @@ int Queue::size()
 
 void Queue::print_queue() const
 {
-	Node* temp = top;
+	Node *temp = top;
 
 	while (temp != NULL)
 	{
@@ -120,10 +119,12 @@ void Queue::print_queue() const
 		temp = temp->next;
 	}
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 }
 
-int main() {
+int main()
+{
 
 	Queue queue;
 
@@ -135,10 +136,13 @@ int main() {
 	cout << "Currently in queue: " << endl;
 	queue.print_queue();
 
-	cout << "First in queue: " << queue.front() << endl << endl;
-	cout << "Last in queue: " << queue.back() << endl << endl;
+	cout << "First in queue: " << queue.front() << endl
+		 << endl;
+	cout << "Last in queue: " << queue.back() << endl
+		 << endl;
 
-	cout << queue.front() << " has been removed from the queue." << endl << endl;
+	cout << queue.front() << " has been removed from the queue." << endl
+		 << endl;
 	queue.pop();
 
 	cout << "The updated queue: " << endl;

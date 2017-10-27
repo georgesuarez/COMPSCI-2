@@ -9,18 +9,19 @@
 
 using namespace std;
 
-struct Node {
+struct Node
+{
 
 	char data;
-	Node* next;
+	Node *next;
 };
 
-bool isEmpty(Node* head)
+bool isEmpty(Node *head)
 {
 	return head == NULL;
 }
 
-void insertAsFirstElement(Node* &head, Node* &last, char c)
+void insertAsFirstElement(Node *&head, Node *&last, char c)
 {
 	Node *temp = new Node;
 	temp->data = c;
@@ -29,7 +30,7 @@ void insertAsFirstElement(Node* &head, Node* &last, char c)
 	last = temp;
 }
 
-void insert(Node* &head, Node* &last, char c)
+void insert(Node *&head, Node *&last, char c)
 {
 	if (isEmpty(head))
 		insertAsFirstElement(head, last, c);
@@ -43,7 +44,7 @@ void insert(Node* &head, Node* &last, char c)
 	}
 }
 
-void print_list(Node* head)
+void print_list(Node *head)
 {
 	while (head != NULL)
 	{
@@ -54,10 +55,10 @@ void print_list(Node* head)
 	cout << endl;
 }
 
-Node* merge_lists(Node* head1, Node* head2)
+Node *merge_lists(Node *head1, Node *head2)
 {
-	Node* head = new Node;
-	Node* current = head;
+	Node *head = new Node;
+	Node *current = head;
 
 	while (head1 != NULL && head2 != NULL)
 	{
@@ -82,17 +83,18 @@ Node* merge_lists(Node* head1, Node* head2)
 	return head->next;
 }
 
-int main() {
+int main()
+{
 
-	Node* head1 = NULL;
-	Node* last1 = NULL;
+	Node *head1 = NULL;
+	Node *last1 = NULL;
 
 	insert(head1, last1, 'A');
 	insert(head1, last1, 'B');
 	insert(head1, last1, 'C');
 
-	Node* head2 = NULL;
-	Node* last2 = NULL;
+	Node *head2 = NULL;
+	Node *last2 = NULL;
 
 	insert(head2, last1, 'D');
 	insert(head2, last1, 'E');
@@ -103,10 +105,10 @@ int main() {
 	cout << "List 1: ";
 	print_list(head1);
 
-	cout << "List 2: "; 
+	cout << "List 2: ";
 	print_list(head2);
 
-	Node* mList = merge_lists(head1, head2);
+	Node *mList = merge_lists(head1, head2);
 
 	cout << "List 1 & List 2 merged: ";
 	print_list(mList);

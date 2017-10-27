@@ -9,16 +9,16 @@
 #include <string>
 using namespace std;
 
-void downsize(list<string>& names)
+void downsize(list<string> &names)
 {
 	list<string>::iterator query = names.begin();
 	query++;
 	names.erase(query);
 	query = names.begin();
 }
-	
 
-int main() {
+int main()
+{
 
 	list<string> names;
 
@@ -42,7 +42,7 @@ int main() {
 	downsize(names);
 	downsize(names);
 	downsize(names);
-	
+
 	cout << "After downsizing the list: " << endl;
 	for (print = names.begin(); print != names.end(); print++)
 	{

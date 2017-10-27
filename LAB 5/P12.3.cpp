@@ -9,11 +9,11 @@
 #include <list>
 using namespace std;
 
-void sort_list(list<int>& numbers)
+void sort_list(list<int> &numbers)
 {
 	for (list<int>::iterator iter = numbers.begin(); iter != (--numbers.end()); iter++)
 	{
-		int* smallest = &(*iter);
+		int *smallest = &(*iter);
 
 		list<int>::iterator iter2 = iter;
 
@@ -31,7 +31,8 @@ void sort_list(list<int>& numbers)
 	}
 }
 
-int main() {
+int main()
+{
 
 	srand(time(NULL));
 

@@ -8,26 +8,26 @@
 
 using namespace std;
 
-struct Node {
+struct Node
+{
 
 	string data;
-	Node* next;
+	Node *next;
 };
 
 class Stack
 {
-public:
-	
+  public:
 	Stack();
-	
+
 	int size();
 	void push(string s);
 	void pop();
 	string top();
 	void print_stack();
 
-private:
-	Node* head;
+  private:
+	Node *head;
 	int sizeOfStack;
 };
 
@@ -39,7 +39,7 @@ Stack::Stack()
 
 void Stack::push(string s)
 {
-	Node* temp = new Node;
+	Node *temp = new Node;
 	temp->data = s;
 	temp->next = NULL;
 
@@ -47,7 +47,7 @@ void Stack::push(string s)
 	{
 		temp->next = head;
 	}
-	
+
 	sizeOfStack++;
 
 	head = temp;
@@ -55,7 +55,7 @@ void Stack::push(string s)
 
 void Stack::pop()
 {
-	Node* temp;
+	Node *temp;
 
 	if (head != NULL)
 	{
@@ -90,7 +90,7 @@ int Stack::size()
 
 void Stack::print_stack()
 {
-	Node* temp = head;
+	Node *temp = head;
 
 	while (temp != NULL)
 	{
@@ -98,10 +98,12 @@ void Stack::print_stack()
 		temp = temp->next;
 	}
 
-	cout << endl << endl;
+	cout << endl
+		 << endl;
 }
 
-int main() {
+int main()
+{
 
 	Stack names;
 
@@ -113,11 +115,14 @@ int main() {
 	cout << "List of names in the stack: " << endl;
 	names.print_stack();
 
-	cout << "Name on top of the stack: " << names.top() << endl << endl;
+	cout << "Name on top of the stack: " << names.top() << endl
+		 << endl;
 
-	cout << "Size of the stack: " << names.size() << endl << endl;
+	cout << "Size of the stack: " << names.size() << endl
+		 << endl;
 
-	cout << names.top() << " has been removed from the stack." << endl << endl;
+	cout << names.top() << " has been removed from the stack." << endl
+		 << endl;
 	names.pop();
 
 	return 0;
