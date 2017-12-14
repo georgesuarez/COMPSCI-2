@@ -5,8 +5,7 @@
 
 using namespace std;
 
-class Fraction
-{
+class Fraction {
 public:
   /**
       Constructs a fraction with numerator 0 and denominator 1.
@@ -27,7 +26,7 @@ public:
   Fraction(int t, int b);
 
   /**
-      Returns the numerator. 
+      Returns the numerator.
       @return the numerator value
    */
   int numerator() const;
@@ -60,9 +59,9 @@ public:
 
   /**
       Compare one fraction value to another.
-      Result is negative if less than right, zero if equal, and 
+      Result is negative if less than right, zero if equal, and
       positive if greater than right.
-      @param right the fraction to be compared against 
+      @param right the fraction to be compared against
    */
   int compare(const Fraction &right) const;
 

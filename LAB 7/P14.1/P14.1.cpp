@@ -1,64 +1,54 @@
 /*
-	Finish the implementation of the class Fraction by overloading the
-	remaining arithmetic operations.
+        Finish the implementation of the class Fraction by overloading the
+        remaining arithmetic operations.
 */
 
-#include <iostream>
 #include "fraction.h"
+#include <iostream>
+
 
 using namespace std;
 
-int main()
-{
+int main() {
 
-	Fraction a;
-	Fraction b(4);
-	Fraction c(6, 8);
+  Fraction a;
+  Fraction b(4);
+  Fraction c(6, 8);
 
-	cout << "Constructed values " << a << " " << b << " " << c << endl
-		 << endl;
-	cout << "Value of c is: " << c.numerator() << "/" << c.denominator() << endl
-		 << endl;
+  cout << "Constructed values " << a << " " << b << " " << c << endl << endl;
+  cout << "Value of c is: " << c.numerator() << "/" << c.denominator() << endl
+       << endl;
 
-	Fraction d = b + c;
+  Fraction d = b + c;
 
-	cout << "4 + 3/4 is " << d << endl
-		 << endl;
+  cout << "4 + 3/4 is " << d << endl << endl;
 
-	d = b - c;
+  d = b - c;
 
-	cout << "4 - 3/4 is " << d << endl
-		 << endl;
+  cout << "4 - 3/4 is " << d << endl << endl;
 
-	Fraction e = (b + (-c));
+  Fraction e = (b + (-c));
 
-	cout << e << " done with negation." << endl
-		 << endl;
+  cout << e << " done with negation." << endl << endl;
 
-	if (d == e)
-	{
-		cout << "Subtraction test successful." << endl
-			 << endl;
-	}
+  if (d == e) {
+    cout << "Subtraction test successful." << endl << endl;
+  }
 
-	a = Fraction(6, 8);
-	b = Fraction(7, 8);
+  a = Fraction(6, 8);
+  b = Fraction(7, 8);
 
-	if (a < b)
-	{
-		cout << "Compare successful." << endl
-			 << endl;
-	}
+  if (a < b) {
+    cout << "Compare successful." << endl << endl;
+  }
 
-	c -= 2;
+  c -= 2;
 
-	cout << "c -= 2 is " << c << endl
-		 << endl;
+  cout << "c -= 2 is " << c << endl << endl;
 
-	b--;
+  b--;
 
-	cout << "Post decremented value of b is " << b << endl
-		 << endl;
+  cout << "Post decremented value of b is " << b << endl << endl;
 
-	return 0;
+  return 0;
 }

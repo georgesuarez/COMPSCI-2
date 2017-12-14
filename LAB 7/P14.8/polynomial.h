@@ -2,24 +2,24 @@
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
 
-#include <vector>
 #include <iostream>
+#include <vector>
+
 
 using namespace std;
 
-class Polynomial
-{
+class Polynomial {
 
-  public:
-	Polynomial(){};
-	Polynomial(vector<float> c) : coeff(c) {}
+public:
+  Polynomial(){};
+  Polynomial(vector<float> c) : coeff(c) {}
 
-	float read(int i) const;
-	int size() const;
-	void push(float value);
+  float read(int i) const;
+  int size() const;
+  void push(float value);
 
-  private:
-	vector<float> coeff;
+private:
+  vector<float> coeff;
 };
 
 Polynomial operator+(const Polynomial &left, const Polynomial &right);
